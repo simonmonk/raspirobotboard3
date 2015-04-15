@@ -1,6 +1,6 @@
 # Attach: SR-04 Range finder, switch on SW1, and of course motors.
 
-# The switch stops and starts the robot
+# The switch SW2 stops and starts the robot
 
 from rrb3 import *
 import time, random

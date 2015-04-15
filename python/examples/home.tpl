@@ -23,6 +23,28 @@ function sendCommand(command)
 {
 	$.get('/', {command: command});
 }
+
+function keyPress(event){
+	code = event.keyCode;
+	if (code == 119) {
+		sendCommand('f');
+	}
+	else if (code == 97) {
+		sendCommand('l');
+	}
+	else if (code == 115) {
+		sendCommand('s');
+	}
+	else if (code == 100) {
+		sendCommand('r');
+	}
+	else if (code == 122) {
+		sendCommand('b');
+	}
+}
+
+$(document).keypress(keyPress);
+
 </script>
 </head>
 <body>
@@ -32,12 +54,12 @@ function sendCommand(command)
 <body>
 
 <table align="center">
-<tr><td></td><td class="controls" onClick="sendCommand('f');">F</td><td></td></tr>
-<tr><td  class="controls" onClick="sendCommand('l');">L</td>
+<tr><td></td><td class="controls" onClick="sendCommand('f');">W</td><td></td></tr>
+<tr><td  class="controls" onClick="sendCommand('l');">A</td>
     <td  class="controls" onClick="sendCommand('s');">S</td>
-    <td  class="controls" onClick="sendCommand('r');">R</td>
+    <td  class="controls" onClick="sendCommand('r');">D</td>
 </tr>
-<tr><td></td><td  class="controls" onClick="sendCommand('b');">B</td><td></td></tr>
+<tr><td></td><td  class="controls" onClick="sendCommand('b');">Z</td><td></td></tr>
 </table>
 
 

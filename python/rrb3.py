@@ -152,3 +152,6 @@ class RRB3:
         pulse_len = finish - start
         distance_cm = pulse_len / 0.000058
         return distance_cm
+        
+    def cleanup(self):
+        GPIO.cleanup()
