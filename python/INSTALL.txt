@@ -1,0 +1,3 @@
+To install the module (only tested on Python2)
+
+$ sudo python setup.py install
