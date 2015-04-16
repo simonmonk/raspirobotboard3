@@ -4,10 +4,6 @@
 
 <style>
 
-.meters {
-    border: 1px solid black;
-}
-
 .controls {
 	width: 150px;
 	font-size: 32pt;
@@ -50,8 +46,6 @@ $(document).keypress(keyPress);
 <body>
 
 <h1>Web Rover</h1>
-
-<body>
 
 <table align="center">
 <tr><td></td><td class="controls" onClick="sendCommand('f');">W</td><td></td></tr>
