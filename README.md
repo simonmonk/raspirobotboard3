@@ -21,7 +21,10 @@ Attach the RRB3 to your Raspberry Pi. You do not need to attach batteries, motor
 Lets run some tests from the Python Console now that everything is installed. We can experiment with the RRB3, even without any motors 
 
 Open a Python console (Python2 not 3) by typing the following into a Terminal window:
-`$ sudo python`
+
+```
+$ sudo python
+```
 
 Then, within the python console, type the following, one line at a time:
 
@@ -52,8 +55,6 @@ Once the chassis is built, use some of the bolts suppled to fix the Raspberry Pi
 
 The leads from the motors will thread up through the chassis and each pair of leads should go to one of the two screw terminals labelled L and R for (left and right). If you put the leads in the wrong way around, the direction of the motor will be opposite to that expected, so just swap them over if this happens.
 
-![Motor wiring](https://raw.githubusercontent.com/simonmonk/wiki_images/master/rrb_attaching%20motors.jpg)
-
 Next, make sure that your Raspberry Pi's USB power lead is unplugged. From now on we are going to power it from batteries.
 
 **WARNING: Never power the Raspberry Pi from both batteries and the USB power connector. One or other, but NOT both.**
@@ -70,9 +71,7 @@ Having your Pi set up for WiFi will allow you to connect to it wirelessly [over 
 # API Reference
 
 ## General
-The library implements a class called RRB2. This is only available for Python 2 and any Python programs that you write that use the libaray must be run as a super user. I.e.
-
-`sudo python myProgram.py'
+The library implements a class called RRB2. This is only available for Python 2 and any Python programs that you write that use the libaray must be run as a super user. 
 
 To import the library and create an instance of the class, put this at the top of your Python program.
 
@@ -80,7 +79,7 @@ To import the library and create an instance of the class, put this at the top o
 from rrb3 import *
 rr = RRB3(9, 6)
 ```
-The first parameter '9' is ther battery voltage (6 x 1.5V AA batteries). The second parameter is the motor voltage (6V for most low cost robot chassis motors). It is important to set these values correctly, as the library will manage the voltage supplied to the motors, to prevent them burning out or running too fast.
+The first parameter '9' is ther battery voltage (6 x 1.5V AA batteries). The second parameter ('6') is the motor voltage (6V for most low cost robot chassis motors). It is important to set these values correctly, as the library will manage the voltage supplied to the motors, to prevent them burning out or running too fast.
 
 The rest is pretty straightforward, there are just a load of useful methods on the class that you can use.
 
@@ -96,7 +95,7 @@ To turn it off again do:
 
 `rr.set_led1(0)`
 
-To control LED2 just do the same thing but using setLED2.
+To control LED2 just do the same thing but using set_led2.
 
 ## Switch Inputs
 
@@ -127,7 +126,7 @@ To turn it off again do:
 
 `rr.set_oc1(0)`
 
-To control OC2, substitute oc2 in place of oc1 in the examples above
+To control OC2, substitute set_oc2 in place of set_oc1 in the examples above
 
 ## Motor (High Level Interface)
 
