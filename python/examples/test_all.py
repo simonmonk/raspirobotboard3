@@ -30,19 +30,19 @@ def test_leds():
 def test_oc():
     rr.set_oc1(0)
     rr.set_oc2(0)
-    confirm("Are [LED E] and [LED F] both OFF?")
+    confirm("OC1 and OC2 OFF?")
     
     rr.set_oc1(1)
     rr.set_oc2(0)
-    confirm("Is [LED E] ON and [LED F] OFF?")
+    confirm("OC1 ON")
 
-    rr.set_oc1(1)
+    rr.set_oc1(0)
     rr.set_oc2(1)
-    confirm("Are [LED E] and [LED F] both ON?")
+    confirm("OC2 ON?")
     
     rr.set_oc1(0)
     rr.set_oc2(0)
-    confirm("Are [LED E] and [LED F] both OFF?")
+    confirm("OC1 and OC2 OFF?")
     
 def test_switches():
     print("Remove header jumpers from [SW1] and [SW2]")
@@ -59,11 +59,7 @@ def test_switches():
     while rr.sw1_closed() or not rr.sw2_closed():
         pass
     print("PASS: [SW2] closed")
-    
-    print("Fit header jumpers on both [SW1] and [SW2]")
-    while not rr.sw1_closed() or not rr.sw2_closed():
-        pass
-    print("PASS: [SW1] and [SW2] closed")
+
 
 def test_motors():
     rr.set_motors(0, 0, 0, 0)
@@ -72,8 +68,8 @@ def test_motors():
     rr.set_motors(1, 0, 1, 0)
     confirm("Are Both motors going forwards?")
 
-    rr.set_motors(0.5, 0, 1, 0)
-    confirm("Is one motor going forwards at half speed?")
+    rr.set_motors(0.5, 0, 0.5, 0)
+    confirm("Are both motors going forwards at half speed?")
     
     rr.set_motors(1, 1, 1, 1)
     confirm("Are both motors going backwards?")
