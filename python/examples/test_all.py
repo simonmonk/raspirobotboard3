@@ -34,7 +34,7 @@ def test_oc():
     
     rr.set_oc1(1)
     rr.set_oc2(0)
-    confirm("OC1 ON")
+    confirm("OC1 ON?")
 
     rr.set_oc1(0)
     rr.set_oc2(1)
