@@ -10,7 +10,7 @@ class RRB3:
     RIGHT_PWM_PIN = 14
     RIGHT_1_PIN = 10
     RIGHT_2_PIN = 25
-    LEFT_PWM_PIN = 24# was wrong set to 3v schematic unrouted on PCB
+    LEFT_PWM_PIN = 24
     LEFT_1_PIN = 17
     LEFT_2_PIN = 4
     SW1_PIN = 11
@@ -72,7 +72,6 @@ class RRB3:
 
     def set_motors(self, left_pwm, left_dir, right_pwm, right_dir):
         if self.old_left_dir != left_dir or self.old_right_dir != right_dir:
-            print("Pause for motor reversal")
             self.set_driver_pins(0, 0, 0, 0)    # stop motors between sudden changes of direction
             time.sleep(self.MOTOR_DELAY)
         self.set_driver_pins(left_pwm, left_dir, right_pwm, right_dir)
