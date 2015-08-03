@@ -12,7 +12,7 @@ On your Raspberry Pi, issue the following commands in a Terminal window:
 ```
 $ cd ~
 $ git clone https://github.com/simonmonk/raspirobotboard3.git
-$ cd raspirobot3/python
+$ cd raspirobotboard3/python
 $ sudo python setup.py install
 ```
 
