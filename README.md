@@ -44,7 +44,7 @@ If you prefer, you can use True and False in place of 1 and 0 in the examples ab
 
 # Connect a Battery and Motors
 
-The quickest way to use the RRB2 as a roving robot is to buy a robot chassis such as the Magician Chassis (available from many sources) or similar low-cost robot chassis kits from eBay. These kits come as a laser cut body, a pair of gearmotors, often a battery box and nuts and bolts to fix it all together.
+The quickest way to use the RRB3 as a roving robot is to buy a robot chassis such as the Magician Chassis (available from many sources) or similar low-cost robot chassis kits from eBay. These kits come as a laser cut body, a pair of gearmotors, often a battery box and nuts and bolts to fix it all together.
 
 Here is one such chassis. The first step is to bolt this all together. Note that these are usually supplied with a 4 x AA battery box. You will need to swap this for a similar 6 x AA battery box or a 7.2V LiPo battery pack. Rechargeable batteries are a good idea when driving motors.
 
@@ -57,7 +57,7 @@ The leads from the motors will thread up through the chassis and each pair of le
 
 Next, make sure that your Raspberry Pi's USB power lead is unplugged. From now on we are going to power it from batteries.
 
-**WARNING: Never power the Raspberry Pi from both batteries and the USB power connector. One or other, but NOT both.**
+If the RRB3 is powered only from your Raspberry Pi, then the motor and OC outputs will not work, but the rangefinder, LEDs and I2C interface will work. To use the Motors and OC outputs, you must connect an external power source to the RRB3.
 
 It is a good idea to leave the wheels off the robot chassis for now so that it does not unexpectedly drive itself off your table. One or both of the motors may spin as the Raspberry Pi starts up.
 
