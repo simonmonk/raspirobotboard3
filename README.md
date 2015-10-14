@@ -222,6 +222,6 @@ Make sure that you plug the display in the right way around. The socket pins are
 
 # Example Projects
 
-Have a look in the "examples" folder of this library for some examples using the RRB2.
+Have a look in the "examples" folder of this library for some examples using the RRB3.
 
 
