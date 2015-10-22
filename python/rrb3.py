@@ -30,7 +30,7 @@ class RRB3:
     old_left_dir = -1
     old_right_dir = -1
 
-    def __init__(self, battery_voltage, motor_voltage, revision=2):
+    def __init__(self, battery_voltage=9.0, motor_voltage=6.0, revision=2):
         
         self.pwm_scale = float(motor_voltage) / float(battery_voltage)
         
