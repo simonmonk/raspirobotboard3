@@ -150,6 +150,18 @@ The commands left, right and reverse all work in the same way.
 
 The stop command stops all the motors.
 
+## Stepper Motor Interface
+
+There RRB3 can be used to drive a single bipolar stepper motor with one coil connected to the L motor driver and the other to the R terminals.
+
+Two commands are available to make the motor step in one direction or the other:
+
+```
+rr.step_forward(5, 200)  # step in one direction for 200 steps with a 5ms delay between each phase change
+rr.set_reverse(5, 200)   # other direction
+```
+
+
 
 ## Motor (Low Level Interface)
 
