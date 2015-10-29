@@ -113,6 +113,30 @@ class RRB3:
         if seconds > 0:
             time.sleep(seconds)
             self.stop()
+            
+    def step_forward(delay, num_steps):
+        for i in range(0, num_steps):
+            this.set_driver_pins(1, 1, 1, 0)
+            time.sleep(delay)
+            this.set_driver_pins(1, 1, 1, 1)
+            time.sleep(delay)
+            this.set_driver_pins(1, 0, 1, 1)
+            time.sleep(delay)
+            this.set_driver_pins(1, 0, 1, 0)
+            time.sleep(delay)
+        this.set_driver_pins(0, 0, 0, 0)
+    
+    def step_reverse(delay, num_steps):
+        for i in range(0, num_steps):
+            this.set_driver_pins(1, 0, 1, 0)
+            time.sleep(delay)
+            this.set_driver_pins(1, 0, 1, 1)
+            time.sleep(delay)
+            this.set_driver_pins(1, 1, 1, 1)
+            time.sleep(delay)
+            this.set_driver_pins(1, 1, 1, 0)
+            time.sleep(delay)
+        this.set_driver_pins(0, 0, 0, 0)
 
     def sw1_closed(self):
         return not GPIO.input(self.SW1_PIN)
