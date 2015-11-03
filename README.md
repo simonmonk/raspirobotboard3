@@ -51,7 +51,7 @@ Here is one such chassis. The first step is to bolt this all together. Note that
 ![Chassis](https://raw.githubusercontent.com/simonmonk/wiki_images/master/rrb_robot_chassis_parts.jpg)
 
 
-Once the chassis is built, use some of the bolts suppled to fix the Raspberry Pi on the chassis and then attach the RRB2 onto the GPIO connector. Make sure its the right way arround, and that all the pins meet up with the socket.
+Once the chassis is built, use some of the bolts suppled to fix the Raspberry Pi on the chassis and then attach the RRB3 onto the GPIO connector. Make sure its the right way arround, and that all the pins meet up with the socket.
 
 The leads from the motors will thread up through the chassis and each pair of leads should go to one of the two screw terminals labelled L and R for (left and right). If you put the leads in the wrong way around, the direction of the motor will be opposite to that expected, so just swap them over if this happens.
 
@@ -71,7 +71,7 @@ Having your Pi set up for WiFi will allow you to connect to it wirelessly [over 
 # API Reference
 
 ## General
-The library implements a class called RRB2. This is only available for Python 2 and any Python programs that you write that use the libaray must be run as a super user. 
+The library implements a class called RRB3. This is only available for Python 2 and any Python programs that you write that use the libaray must be run as a super user. 
 
 To import the library and create an instance of the class, put this at the top of your Python program.
 
@@ -104,9 +104,9 @@ The sw1_closed() and sw2_closed() functions return true if the contacts for that
 The following test program will show you the state of each of the switch contacts.
 
 ```
-from rrb2 import *
+from rrb3 import *
 
-rr = RRB2()
+rr = RRB3()
 
 while True:
     print("SW1=" + str(rr.sw1_closed()) + " SW2=" + str(rr.sw2_closed()))
@@ -183,30 +183,11 @@ to send the motors both at half speed in opposite directions is:
 
 ## Range Finder
 
-If you fit the RRB2 with an SR-04 ultrasonic rangefinder, then you can use the following call to measure the distance to the enarest obstacle in cm.
+If you fit the RRB3 with an SR-04 ultrasonic rangefinder, then you can use the following call to measure the distance to the enarest obstacle in cm.
 
 `rr.get_distance()`
 
 ## Hardware
-
-The RRB2 uses the following pins:
-
-    RIGHT_PWM_PIN = 14
-    RIGHT_1_PIN = 10
-    RIGHT_2_PIN = 25
-    LEFT_PWM_PIN = 24
-    LEFT_1_PIN = 17
-    LEFT_2_PIN = 4
-    SW1_PIN = 11
-    SW2_PIN = 9
-    LED1_PIN = 8
-    LED2_PIN = 7
-    OC1_PIN = 22
-    OC2_PIN = 27
-    OC2_PIN_R1 = 21
-    OC2_PIN_R2 = 27
-    TRIGGER_PIN = 18
-    ECHO_PIN = 23
 
 You can find the schematic design file in the "hardware" section of this repo.
 
@@ -229,7 +210,7 @@ The I2C socket is pin compatible with these Adafruit displays:
 
 To use these you will need to download Adafruit's Python library for the Pi from [here](http://learn.adafruit.com/matrix-7-segment-led-backpack-with-the-raspberry-pi/overview).
 
-Make sure that you plug the display in the right way around. The socket pins are labelled on the RRB2, make sure they match up with the labels on the display. You can use male to female jumper wires if you wish to put the display further away or its too big.
+Make sure that you plug the display in the right way around. The socket pins are labelled on the RRB3, make sure they match up with the labels on the display. You can use male to female jumper wires if you wish to put the display further away or its too big.
 
 
 # Example Projects
