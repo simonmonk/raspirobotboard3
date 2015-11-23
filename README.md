@@ -1,8 +1,6 @@
 # raspirobotboard3
 Python library and design files for the RasPi Robot Board V3
 
-This board is not yet released. It will be available in Sept 2015.
-
 If you were looking for the library for the version 2 board go to https://github.com/simonmonk/raspirobotboard2
 
 # Installing the Python Libraries
@@ -63,7 +61,7 @@ It is a good idea to leave the wheels off the robot chassis for now so that it d
 
 Wire the battery pack into the third pair of screw terminals. +V towards the outside of the board. The Raspberry Pi's power light should light up and it will start to boot. 
 
-Having your Pi set up for WiFi will allow you to connect to it wirelessly [over SSH](http://learn.adafruit.com/adafruits-raspberry-pi-lesson-6-using-ssh/overview). So, you may want to plug in a USB WiFi dongle.
+Having your Pi set up for WiFi will allow you to connect to it wirelessly [over SSH](http://monkmakes.com/wifi). So, you may want to plug in a USB WiFi dongle.
 
 
 
@@ -116,7 +114,7 @@ while True:
 
 ## Open Collector Outputs
 
-The RaspiRobotBoard has two low-power open collector outputs. These can each source up to 2A and so are suitable for driving medium loads at the battery voltage, such as high power LEDS, IR senders, alarm bells, relays etc.
+The RRB3 has two high-power open collector outputs. These can each source up to 2A and so are suitable for driving loads at the battery voltage, such as high power LEDS, IR senders, alarm bells, relays etc.
 
 To turn the Open Collector OC1 output on just do:
 
