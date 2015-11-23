@@ -3,7 +3,7 @@ Python library and design files for the RasPi Robot Board V3
 
 This board is not yet released. It will be available in Sept 2015.
 
-If you were looking for the library for the version 2 board go to http://www.raspirobot.com.
+If you were looking for the library for the version 2 board go to https://github.com/simonmonk/raspirobotboard2
 
 # Installing the Python Libraries
 
