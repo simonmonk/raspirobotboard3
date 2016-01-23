@@ -1,12 +1,13 @@
-#rrb3.py Library
+# rrb3.py Library
 
 import RPi.GPIO as GPIO
 import time
 
+
 class RRB3:
-	
+
     MOTOR_DELAY = 0.2
-    
+
     RIGHT_PWM_PIN = 14
     RIGHT_1_PIN = 10
     RIGHT_2_PIN = 25
@@ -26,17 +27,17 @@ class RRB3:
     left_pwm = 0
     right_pwm = 0
     pwm_scale = 0
-    
+
     old_left_dir = -1
     old_right_dir = -1
 
     def __init__(self, battery_voltage=9.0, motor_voltage=6.0, revision=2):
-        
+
         self.pwm_scale = float(motor_voltage) / float(battery_voltage)
-        
+
         if self.pwm_scale > 1:
             print("WARNING: Motor voltage is higher than battery votage. Motor may run slow.")
-        
+
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
 
@@ -45,8 +46,8 @@ class RRB3:
         self.left_pwm.start(0)
         GPIO.setup(self.LEFT_1_PIN, GPIO.OUT)
         GPIO.setup(self.LEFT_2_PIN, GPIO.OUT)
-        
-        GPIO.setup(self.RIGHT_PWM_PIN, GPIO.OUT)        
+
+        GPIO.setup(self.RIGHT_PWM_PIN, GPIO.OUT)
         self.right_pwm = GPIO.PWM(self.RIGHT_PWM_PIN, 500)
         self.right_pwm.start(0)
         GPIO.setup(self.RIGHT_1_PIN, GPIO.OUT)
@@ -68,8 +69,6 @@ class RRB3:
         GPIO.setup(self.TRIGGER_PIN, GPIO.OUT)
         GPIO.setup(self.ECHO_PIN, GPIO.IN)
 
-
-
     def set_motors(self, left_pwm, left_dir, right_pwm, right_dir):
         if self.old_left_dir != left_dir or self.old_right_dir != right_dir:
             self.set_driver_pins(0, 0, 0, 0)    # stop motors between sudden changes of direction
@@ -77,7 +76,7 @@ class RRB3:
         self.set_driver_pins(left_pwm, left_dir, right_pwm, right_dir)
         self.old_left_dir = left_dir
         self.old_right_dir = right_dir
-        
+
     def set_driver_pins(self, left_pwm, left_dir, right_pwm, right_dir):
         self.left_pwm.ChangeDutyCycle(left_pwm * 100 * self.pwm_scale)
         GPIO.output(self.LEFT_1_PIN, left_dir)
@@ -85,7 +84,6 @@ class RRB3:
         self.right_pwm.ChangeDutyCycle(right_pwm * 100 * self.pwm_scale)
         GPIO.output(self.RIGHT_1_PIN, right_dir)
         GPIO.output(self.RIGHT_2_PIN, not right_dir)
-        
 
     def forward(self, seconds=0, speed=0.5):
         self.set_motors(speed, 0, speed, 0)
@@ -95,13 +93,13 @@ class RRB3:
 
     def stop(self):
         self.set_motors(0, 0, 0, 0)
- 
+
     def reverse(self, seconds=0, speed=0.5):
         self.set_motors(speed, 1, speed, 1)
         if seconds > 0:
             time.sleep(seconds)
             self.stop()
-    
+
     def left(self, seconds=0, speed=0.5):
         self.set_motors(speed, 0, speed, 1)
         if seconds > 0:
@@ -113,7 +111,7 @@ class RRB3:
         if seconds > 0:
             time.sleep(seconds)
             self.stop()
-            
+
     def step_forward(self, delay, num_steps):
         for i in range(0, num_steps):
             self.set_driver_pins(1, 1, 1, 0)
@@ -125,7 +123,7 @@ class RRB3:
             self.set_driver_pins(1, 0, 1, 0)
             time.sleep(delay)
         self.set_driver_pins(0, 0, 0, 0)
-    
+
     def step_reverse(self, delay, num_steps):
         for i in range(0, num_steps):
             self.set_driver_pins(1, 0, 1, 0)
@@ -154,7 +152,7 @@ class RRB3:
         GPIO.output(self.OC1_PIN, state)
 
     def set_oc2(self, state):
-        GPIO.output(self.OC2_PIN, state)    
+        GPIO.output(self.OC2_PIN, state)
 
     def _send_trigger_pulse(self):
         GPIO.output(self.TRIGGER_PIN, True)
@@ -164,7 +162,7 @@ class RRB3:
     def _wait_for_echo(self, value, timeout):
         count = timeout
         while GPIO.input(self.ECHO_PIN) != value and count > 0:
-            count = count - 1
+            count -= 1
 
     def get_distance(self):
         self._send_trigger_pulse()
@@ -175,6 +173,6 @@ class RRB3:
         pulse_len = finish - start
         distance_cm = pulse_len / 0.000058
         return distance_cm
-        
+
     def cleanup(self):
         GPIO.cleanup()
