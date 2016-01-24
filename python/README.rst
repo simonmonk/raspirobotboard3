@@ -1,7 +1,7 @@
-raspirobotboard 2
+raspirobotboard 3
 =================
 
-Source for the RaspiRobotBoard V3 Python library.
+RaspiRobotBoard V3 Python library.
 
 For full instructions for installation and use, see:
 
