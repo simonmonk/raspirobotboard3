@@ -12,7 +12,8 @@ setup(
         long_description=readme,
         author='Simon Monk',
         author_email='evilgeniusauthor@gmail.com',
-        url='http://www.raspirobot.com',
+        url='https://github.com/simonmonk/raspirobotboard3',
+        download_url='https://github.com/simonmonk/raspirobotboard3/tarball/0.1'
         py_modules=['rrb3'],
         install_requires=[
             'RPi.GPIO>=0.5',
