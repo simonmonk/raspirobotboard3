@@ -5,7 +5,13 @@ If you were looking for the library for the version 2 board go to https://github
 
 # Installing the Python Libraries
 
-On your Raspberry Pi, issue the following commands in a Terminal window:
+The simplest way to install the library is to run the command below in a Terminal window:
+
+```
+$ sudo pip install rrb3
+```
+
+Alternatively to download and install the library manually, for example to be able to see the example files, issue the following commands 
 
 ```
 $ cd ~
