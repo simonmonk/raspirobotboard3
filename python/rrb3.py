@@ -85,7 +85,7 @@ class RRB3:
         GPIO.output(self.RIGHT_1_PIN, right_dir)
         GPIO.output(self.RIGHT_2_PIN, not right_dir)
 
-    def forward(self, seconds=0, speed=0.5):
+    def forward(self, seconds=0, speed=1.0):
         self.set_motors(speed, 0, speed, 0)
         if seconds > 0:
             time.sleep(seconds)
@@ -94,7 +94,7 @@ class RRB3:
     def stop(self):
         self.set_motors(0, 0, 0, 0)
 
-    def reverse(self, seconds=0, speed=0.5):
+    def reverse(self, seconds=0, speed=1.0):
         self.set_motors(speed, 1, speed, 1)
         if seconds > 0:
             time.sleep(seconds)
