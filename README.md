@@ -5,7 +5,13 @@ If you were looking for the library for the version 2 board go to https://github
 
 # Installing the Python Libraries
 
-On your Raspberry Pi, issue the following commands in a Terminal window:
+The simplest way to install the library is to run the command below in a Terminal window:
+
+```
+$ sudo pip install rrb3
+```
+
+Alternatively to download and install the library manually, for example to be able to see the example files, issue the following commands 
 
 ```
 $ cd ~
@@ -216,3 +222,23 @@ Make sure that you plug the display in the right way around. The socket pins are
 Have a look in the "examples" folder of this library for some examples using the RRB3.
 
 
+# Pin Usage
+
+```
+    RIGHT_PWM_PIN = 14
+    RIGHT_1_PIN = 10
+    RIGHT_2_PIN = 25
+    LEFT_PWM_PIN = 24
+    LEFT_1_PIN = 17
+    LEFT_2_PIN = 4
+    SW1_PIN = 11
+    SW2_PIN = 9
+    LED1_PIN = 8
+    LED2_PIN = 7
+    OC1_PIN = 22
+    OC2_PIN = 27
+    OC2_PIN_R1 = 21
+    OC2_PIN_R2 = 27
+    TRIGGER_PIN = 18
+    ECHO_PIN = 23
+```
