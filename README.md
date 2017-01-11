@@ -3,6 +3,9 @@ Python library and design files for the RasPi Robot Board V3
 
 If you were looking for the library for the version 2 board go to https://github.com/simonmonk/raspirobotboard2
 
+Rusty Gereard has produced a Java library for the RRB3 -  https://github.com/R-Gerard/RRB4J
+
+
 # Installing the Python Libraries
 
 The simplest way to install the library is to run the command below in a Terminal window:
