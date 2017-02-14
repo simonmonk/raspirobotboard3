@@ -8,13 +8,7 @@ Rusty Gereard has produced a Java library for the RRB3 -  https://github.com/R-G
 
 # Installing the Python Libraries
 
-The simplest way to install the library is to run the command below in a Terminal window:
-
-```
-$ sudo pip install rrb3
-```
-
-Alternatively to download and install the library manually, for example to be able to see the example files, issue the following commands 
+To install the library, issue the following commands 
 
 ```
 $ cd ~
@@ -245,3 +239,21 @@ Have a look in the "examples" folder of this library for some examples using the
     TRIGGER_PIN = 18
     ECHO_PIN = 23
 ```
+
+# FAQ
+
+Q. My right motor doesn't work, but the left works fine and if I swap over the motors, the right motor still doesn't work. What's going on?
+
+A. The RRB3 is designed to be compatible with older Raspberry Pi models that only had a 26 pin GPIO header. To have access to all the features of the RRB3 board, nearly every GPIO pin is used including some pins that can be used by other GPIO interfaces. In particular, the right motor channel uses GPIO pins 14, 10 and 25. GPIO14 doubles as the Raspberry Pi Serial interface's TX pin and GPIO10 doubles as the MOSI pin for the GPIO interface.
+If you are having trouble with the right motor channel, then make sure that both of these interfaces are turned off. On newer versions of Raspbian, you can do this using the Raspberry Pi Configuration tool that you will find on the main Raspberry menu under Preferences.
+
+![Settings](https://www.monkmakes.com/wp-content/uploads/2017/02/F10_13.png)
+
+If you have an older version of Raspbian or are running 'headless', you can do the same thing using the raspi-config tool. Run the tool using the command:
+
+
+```
+    $ sudo raspi-config
+```
+
+Select the Advanced option and then turn off Serial and SPI.
