@@ -1,0 +1,33 @@
+Metadata-Version: 1.1
+Name: rrb3
+Version: 1.1
+Summary: A library to support the RaspberryRobotBoard Version 3
+Home-page: https://github.com/simonmonk/raspirobotboard3
+Author: Simon Monk
+Author-email: evilgeniusauthor@gmail.com
+License: MIT
+Download-URL: https://github.com/simonmonk/raspirobotboard3/tarball/0.1
+Description: raspirobotboard 3
+        =================
+        
+        RaspiRobotBoard V3 Python library.
+        
+        For full instructions for installation and use, see:
+        
+        https://github.com/simonmonk/raspirobotboard3
+        
+        for Version 1 (through hole kit) of the RaspiRobotBoard, see: https://github.com/simonmonk/raspirobotboard/wiki
+        
+        for Version 2 of the RaspiRobotBoard, see: https://github.com/simonmonk/raspirobotboard2
+Keywords: raspirobotboard3 rrb3 raspi robot raspberry pi dc motor stepper
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: Implementation :: PyPy
